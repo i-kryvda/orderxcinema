@@ -1,0 +1,49 @@
+@use "@/shared/config/styles/base.scss";
+@use "@/shared/config/styles/variables.scss";
+@use "@/shared/config/styles/fonts.scss";
+@use "@/shared/config/styles/utils.scss";
+
+// --toggle-circle-x: 19px;
+
+:root {
+  --toggle-circle-x: 0px;
+}
+
+html[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --text-primary: #000000;
+  --header-hover-bg: #ebebeb;
+  --button-primary-bg: #2a7aef;
+  --toggle-circle-x: 19px;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scrollbar-gutter: stable;
+
+  // overflow-y: scroll;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+[class*="__container"] {
+  max-width: 123rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

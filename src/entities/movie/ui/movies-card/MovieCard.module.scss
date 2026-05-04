@@ -1,0 +1,51 @@
+.movie {
+  background-color: black;
+}
+
+.card {
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  color: var(--text-on-dark);
+  transition: transform 0.3s ease;
+}
+
+.image {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #161616;
+  border: 1rem solid black;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.5rem;
+  border-bottom: none;
+
+  & img {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.33s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.03);
+    // filter: brightness(1.1) contrast(1.05);
+  }
+}
+
+.content {
+  // border: 1px solid red;
+  padding: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.year {
+  opacity: 0.5;
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.3;
+}

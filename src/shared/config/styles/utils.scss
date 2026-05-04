@@ -1,0 +1,109 @@
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+.title {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.glitch {
+  position: relative;
+
+  display: inline-block;
+
+  width: fit-content;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+}
+
+.glitch::before {
+  color: #ff004c;
+}
+
+.glitch::after {
+  color: #00fff9;
+}
+
+.glitch:hover::before {
+  animation: glitch-red 0.66s;
+}
+
+.glitch:hover::after {
+  animation: glitch-cyan 0.33s;
+}
+
+.glitch-infinite::before {
+  animation: glitch-red 0.66s infinite;
+}
+
+.glitch-infinite::after {
+  animation: glitch-cyan 0.33s infinite;
+}
+
+@keyframes glitch-red {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(-2px, 1px);
+  }
+
+  50% {
+    transform: translate(2px, -1px);
+  }
+
+  75% {
+    transform: translate(-1px, -1px);
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-cyan {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(2px, -1px);
+  }
+
+  50% {
+    transform: translate(-2px, 1px);
+  }
+
+  75% {
+    transform: translate(1px, 1px);
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}

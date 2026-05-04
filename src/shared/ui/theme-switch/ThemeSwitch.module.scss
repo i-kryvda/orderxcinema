@@ -1,0 +1,40 @@
+.themeSwitch {
+  width: 4.8rem;
+  height: 2.4rem;
+  // display: inline-block;
+  display: flex;
+  align-items: center;
+
+  border: none;
+  border-radius: 999px;
+  border: 2px solid #323334;
+  background-color: #0d0e0f;
+
+  // position: relative;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  &Thumb {
+    // position: absolute;
+    // top: 0.2rem;
+    // left: 0.4rem;
+
+    width: 1.6rem;
+    height: 1.6rem;
+
+    border-radius: 50%;
+
+    background-color: var(--button-primary-bg);
+    // transform: translate(0.2rem, 0.2rem);
+    transform: translateX(0.4rem);
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  &Thumb[data-theme="dark"] {
+    // transform: translateX(100%);
+    transform: translateX(2.2rem);
+  }
+}
