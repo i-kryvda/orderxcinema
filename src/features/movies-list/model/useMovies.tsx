@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { getMovies } from "@entities/movie/api/api";
-import type { Movie } from "@entities/movie/model/movies-type";
+import type { Movie } from "@entities/movie/types";
 
 export function useMovies() {
   const [data, setData] = useState<Movie[] | null>(null);
@@ -24,5 +24,5 @@ export function useMovies() {
     fetchMovies();
   }, [fetchMovies]);
 
-  return { data, isLoading, error };
+  return { data: data ?? [], isLoading, error, refetch: fetchMovies };
 }

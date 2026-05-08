@@ -18,38 +18,36 @@
 
 .glitch {
   position: relative;
-
   display: inline-block;
-
   width: fit-content;
-}
 
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
+  &::before,
+  &::after {
+    content: attr(data-text);
 
-  position: absolute;
-  inset: 0;
+    position: absolute;
+    inset: 0;
 
-  pointer-events: none;
+    pointer-events: none;
 
-  opacity: 0;
-}
+    opacity: 0;
+  }
 
-.glitch::before {
-  color: #ff004c;
-}
+  &::before {
+    color: #ff004c;
+  }
 
-.glitch::after {
-  color: #00fff9;
-}
+  &::after {
+    color: #00fff9;
+  }
 
-.glitch:hover::before {
-  animation: glitch-red 0.66s;
-}
+  &:hover::before {
+    animation: glitch-red 0.66s;
+  }
 
-.glitch:hover::after {
-  animation: glitch-cyan 0.33s;
+  &:hover::after {
+    animation: glitch-cyan 0.33s;
+  }
 }
 
 .glitch-infinite::before {

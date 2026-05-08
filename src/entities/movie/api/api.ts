@@ -1,6 +1,6 @@
 import { api } from "@shared/api/api";
 
-const API_KEY = "21a9b2c";
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 // /?apikey=${API_KEY}&s=batman&page=1
 
@@ -11,4 +11,18 @@ export const getMovies = async (query = "batman") => {
 
   await delay(1000);
   return res.data.Search || [];
+};
+
+export const getMovie = async (id: string) => {
+  const res = await api.get(`/?apikey=${API_KEY}&i=${id}`);
+
+  await delay(1000);
+
+  const data = res.data;
+
+  if (data.Response === "False") {
+    return null;
+  }
+
+  return data;
 };

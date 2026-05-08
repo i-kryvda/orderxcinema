@@ -1,0 +1,37 @@
+.movie {
+  padding-block: 40px;
+}
+
+// .container {
+//   // max-width: 1000px;
+//   // margin: 0 auto;
+//   // padding: 0 20px;
+// }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 14px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+}

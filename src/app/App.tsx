@@ -1,18 +1,8 @@
-import { Footer } from "@widgets/footer/Footer";
-import { Header } from "@widgets/header/Header";
-import { MoviesList } from "@widgets/movies-list/ui/MoviesList";
+import { RouterProvider } from "./providers/router-provider/router-provider";
 import "./App.scss";
 
 export function App() {
-  return (
-    <>
-      <Header />
-      <main className="main">
-        <MoviesList />
-      </main>
-      <Footer />
-    </>
-  );
+  return <RouterProvider />;
 }
 
 //----------------------------------------------------------

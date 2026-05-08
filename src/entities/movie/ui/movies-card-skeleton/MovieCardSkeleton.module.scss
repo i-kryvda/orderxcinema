@@ -3,16 +3,16 @@
   // border-bottom: none;
 
   // background-color: #1a1a1a;
-  background-color: black;
+  // background-color: black;
   border-radius: 1rem;
 }
 
 .card {
   height: 100%;
   overflow: hidden;
-  background-color: #1a1a1a;
-  background-color: black;
-  color: var(--text-on-dark);
+  // background-color: #1a1a1a;
+  // background-color: black;
+  // color: var(--text-on-dark);
   transition: transform 0.3s ease;
 }
 
@@ -43,12 +43,15 @@
 .image {
   width: 100%;
   aspect-ratio: 2 / 3;
-  border: 1rem solid black;
+  // border: 1rem solid black;
+  aspect-ratio: 2 / 3;
+  border-radius: 1rem;
   border-bottom: none;
 }
 
 .content {
-  padding: 1rem;
+  padding: 1rem 0rem;
+  // padding: 1rem;
   // border: 1px solid red;
 }
 

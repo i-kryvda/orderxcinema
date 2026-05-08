@@ -1,25 +1,57 @@
-import { clsx } from "clsx";
+import { NavLink } from "react-router-dom";
+import { routes } from "@shared/config/routes";
+import { useFavoritesStore } from "@entities/movie/model/fovorites-store";
+import type { Movie } from "@entities/movie/types";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import styles from "./MovieCard.module.scss";
 
-type MovieCardProps = {
-  poster: string;
-  title: string;
-  year: string;
+type Props = {
+  movie: Movie;
 };
 
-export function MovieCard({ poster, title, year }: MovieCardProps) {
+export function MovieCard({ movie }: Props) {
+  const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
+  const isFavorite = useFavoritesStore((s) => s.isFavorite(movie.imdbID));
+
+  const poster =
+    movie.Poster && movie.Poster !== "N/A" ? movie.Poster : "/no-poster.png";
+
   return (
     <li className={styles.movie}>
-      <article className={styles.card}>
-        <div className={styles.image}>
-          <img src={poster} alt={title} />
+      <figure className={styles.card}>
+        <div className={styles.imageWrapper}>
+          <div className={styles.image}>
+            <img src={poster} alt={movie.Title} />
+          </div>
+
+          <div className={styles.overlay}>
+            <button
+              className={styles.like}
+              onClick={() => toggleFavorite(movie)}
+            >
+              {isFavorite ? (
+                <FaHeart size={18} color="red" />
+              ) : (
+                <FaRegHeart size={18} />
+              )}
+            </button>
+
+            <NavLink
+              className={styles.details}
+              to={routes.movies.detail(movie.imdbID)}
+            >
+              Details
+            </NavLink>
+          </div>
         </div>
 
-        <div className={styles.content}>
-          <h2 className={clsx("title", styles.title)}>{title}</h2>
-          <span className={styles.year}>{year}</span>
-        </div>
-      </article>
+        <figcaption className={styles.content}>
+          <h2 className={styles.title} title={movie.Title}>
+            {movie.Title}
+          </h2>
+          <span className={styles.year}>{movie.Year}</span>
+        </figcaption>
+      </figure>
     </li>
   );
 }

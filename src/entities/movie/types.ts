@@ -3,4 +3,6 @@ export type Movie = {
   Year: string;
   imdbID: string;
   Poster: string;
+  Plot: string;
+  Response: "True" | "False";
 };

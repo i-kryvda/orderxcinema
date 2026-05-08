@@ -8,25 +8,22 @@
     align-items: center;
     justify-content: space-between;
   }
+}
 
-  &Logo {
-  }
+.actions {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
 
-  &Actions {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
-
-  &Title {
-    font-size: 2rem;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    justify-content: center;
-    // border: 1px solid red;
-  }
+.link {
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  text-transform: uppercase;
 }
 
 .logo {

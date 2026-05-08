@@ -1,24 +1,40 @@
-.movie {
-  background-color: black;
-}
-
 .card {
   height: 100%;
   overflow: hidden;
-  background-color: black;
-  color: var(--text-on-dark);
+  // background-color: black;
+  // color: var(--text-on-dark);
   transition: transform 0.3s ease;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+  opacity: 0;
+  transition: 0.33s;
+}
+
+.imageWrapper:hover .overlay {
+  opacity: 1;
 }
 
 .image {
   display: block;
   overflow: hidden;
   cursor: pointer;
-  background-color: #161616;
-  border: 1rem solid black;
+  background-color: #000000;
+  // border: 1px solid red;
   aspect-ratio: 2 / 3;
-  border-radius: 0.5rem;
-  border-bottom: none;
+  border-radius: 1rem;
 
   & img {
     aspect-ratio: 2 / 3;
@@ -27,17 +43,24 @@
     height: 100%;
     transition: transform 0.33s ease;
   }
-
-  &:hover img {
-    transform: scale(1.03);
-    // filter: brightness(1.1) contrast(1.05);
-  }
 }
 
 .content {
   // border: 1px solid red;
   padding: 1rem;
   transition: transform 0.4s ease;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-start;
+  gap: 1rem;
+}
+
+.details {
+  text-transform: uppercase;
+
+  color: var(--text-on-dark);
+  border: 1px solid currentColor;
+  padding: 1rem 1.5rem;
 }
 
 .year {
@@ -45,7 +68,23 @@
   font-size: 1.2rem;
 }
 
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0rem;
+  top: 0rem;
+  padding: 1.5rem;
+  color: var(--text-on-dark);
+}
+
 .title {
-  font-size: 2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1.4rem;
   line-height: 1.3;
 }

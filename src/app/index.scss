@@ -31,7 +31,7 @@ body {
   // overflow-y: scroll;
 }
 
-#root {
+.app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -40,6 +40,16 @@ body {
 
 .main {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid red;
 }
 
 [class*="__container"] {

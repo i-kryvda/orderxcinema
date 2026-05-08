@@ -1,0 +1,30 @@
+.poster {
+  width: 250px;
+  height: 360px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.year {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.plot {
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.button {
+  color: #ff760b;
+  text-transform: uppercase;
+}
