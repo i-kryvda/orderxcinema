@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "@pages/home/Home";
-import { Layout } from "@pages/layout/Layout";
-import { MovieDetailsPage } from "@pages/movie-details/ui";
-import { NotFoundPage } from "@pages/not-found/NotFoundPage";
-import { FavoritesPage } from "@pages/favorites/FavoritesPage";
+import { Home } from "@components/pages/home/Home";
+import { Layout } from "@components/templates/layout/Layout";
+import { MovieDetailsPage } from "@components/pages/movie-details";
+import { NotFoundPage } from "@components/pages/not-found/NotFoundPage";
+import { FavoritesPage } from "@components/pages/favorites/FavoritesPage";
 import { routes } from "@shared/config/routes";
 
 export const AppRouter = () => {

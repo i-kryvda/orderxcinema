@@ -1,0 +1,47 @@
+.header {
+  background-color: var(--bg-secondary);
+  padding: 2rem 0rem;
+  color: var(--text-on-dark);
+
+  &Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.actions {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.link {
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.logo {
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoMid {
+  font-size: 3.5rem;
+  color: var(--text-accent);
+  transform: translateY(0);
+}
+
+.input {
+  border: 1px solid white;
+  color: white;
+}
