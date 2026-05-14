@@ -1,14 +1,9 @@
 import { Link } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 import { routes } from "@shared/config/routes";
 import styles from "./NotFoundPage.module.scss";
-import { FaHome } from "react-icons/fa";
 
 export function NotFoundPage() {
-  // const navigate = useNavigate();
-
-  // const handleBackHome = () => navigate(routes.home);
-  // const handleBack = () => navigate(-1);
-
   return (
     <div className="center">
       <div className={styles.notFound}>

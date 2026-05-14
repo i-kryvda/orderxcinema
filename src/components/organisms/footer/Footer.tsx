@@ -1,18 +1,18 @@
-import s from "./Footer.module.scss";
+import styles from "./Footer.module.scss";
 
 export function Footer() {
   return (
-    <footer className={s.footer}>
-      <div className={`footer__container ${s.footerContainer}`}>
-        <div className={s.footerBody}>
-          <p className={s.footerDescription}>
+    <footer className={styles.footer}>
+      <div className={`footer__container ${styles.footerContainer}`}>
+        <div className={styles.footerBody}>
+          <p className={styles.footerDescription}>
             💭 Thanks for visiting WatchList ! <br />
             I hope you’ll find your next favorite movie here. <br />
           </p>
         </div>
 
-        <div className={s.footerActions}>
-          <a href="https://github.com" className={s.footerLink}>
+        <div className={styles.footerActions}>
+          <a href="https://github.com" className={styles.footerLink}>
             GitHub
           </a>
         </div>

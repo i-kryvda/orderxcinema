@@ -1,4 +1,3 @@
-// import { Footer } from "../../components/organisms/footer/Footer";
 import { Footer } from "@components/organisms/footer/Footer";
 import { Header } from "@components/organisms/header/Header";
 import { Outlet } from "react-router-dom";
