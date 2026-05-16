@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { NotFoundPage } from "@components/pages/not-found/NotFoundPage";
 import { ErrorMessage } from "@shared/ui/error-message/ErrorMessage";
 import { useMovie } from "@shared/hooks/useMovie";
@@ -16,8 +16,12 @@ export function MovieDetailsPage() {
 
   const { data, status } = useMovie(id);
 
+  const location = useLocation();
+
   const handleBack = () => {
-    if (window.history.length > 1) navigate(-1);
+    const from = location.state?.from;
+
+    if (from) navigate(from);
     else navigate("/");
   };
 
@@ -31,11 +35,10 @@ export function MovieDetailsPage() {
   return (
     <Section title="Movie details">
       <div className={styles.header}>
-        <button className={styles.back} onClick={handleBack}>
-          Back
+        <button type="button" onClick={handleBack}>
+          back
         </button>
       </div>
-
       <div className={styles.content}>{renderContent()}</div>
     </Section>
   );

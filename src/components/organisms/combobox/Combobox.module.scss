@@ -1,0 +1,154 @@
+.search {
+  position: relative;
+  min-width: 40rem;
+  color: var(--text-primary);
+  color: var(--text-on-dark);
+
+  &Field {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.searchField * {
+  transition: all 0.15s ease;
+}
+
+.input {
+  z-index: 200;
+  width: 100%;
+  padding: 0.7rem 3.6rem;
+  border: 1px solid var(--border-accent);
+  // border-radius: 0.5rem;
+  // border-bottom-left-radius: 0;
+  // border-bottom-right-radius: 0;
+  color: var(--text-on-dark);
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: var(--border-color-hover);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+}
+
+.input:not(:placeholder-shown) {
+  border-color: var(--border-color-focus);
+}
+
+.input:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.searchIcon {
+  position: absolute;
+  z-index: 9299;
+  left: 10px;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.clear {
+  position: absolute;
+  z-index: 299;
+  top: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  right: 20px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.clear:hover {
+  opacity: 0.7;
+}
+
+.suggestions {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 1rem 0.5rem;
+  background-color: #262626;
+  background-color: rgba(0, 0, 0, 0.9);
+  // background-color: var(--sidebar-color); // ACCENT-BG-COLOR
+  border: 1px solid var(--border-accent);
+  border-top: 1px solid transparent;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  opacity: 0;
+  transform: translateY(0.8rem);
+  pointer-events: none;
+  transition-property: opacity, transform;
+  transition-timing-function: ease;
+  transition-duration: 0.22s;
+  will-change: transform, opacity;
+}
+
+.suggestions.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition-duration: 0.08s;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.suggestion {
+  position: relative;
+  // color: red;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.suggestion:hover {
+  // border: 1px solid var(--border-color);
+  background-color: var(--border-accent);
+  // background-color: red;
+  border-left: 2px solid orange;
+}
+
+.suggestion[data-highlighted="true"] {
+  background-color: var(--border-accent);
+  border-left: 2px solid orange;
+  // color: white;
+}
+
+.suggestion[data-highlighted="true"] .tooltip {
+  opacity: 1;
+}
+
+.tooltip {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: orange;
+  font-size: 11px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}

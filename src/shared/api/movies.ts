@@ -1,3 +1,4 @@
+import type { Movie } from "@shared/types/movies";
 import { api } from "./axios";
 
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
@@ -10,7 +11,13 @@ export const getMovies = async (query = "batman") => {
   const res = await api.get(`/?apikey=${API_KEY}&s=${query}`);
 
   await delay(1000);
+
+  console.log(res.data);
+
   return res.data.Search || [];
+  // return (res.data.Search || []).filter(
+  //   (movie: Movie) => movie.Poster !== "N/A",
+  // );
 };
 
 export const getMovie = async (id: string) => {
@@ -25,4 +32,18 @@ export const getMovie = async (id: string) => {
   }
 
   return data;
+};
+
+export const getMovieSuggestions = async (
+  query: string,
+  signal?: AbortSignal,
+) => {
+  const res = await api.get(
+    `/?apikey=${API_KEY}&s=${encodeURIComponent(query)}`,
+    { signal },
+  );
+
+  // console.log(res.data);
+
+  return (res.data.Search || []).map((movie: Movie) => movie.Title);
 };

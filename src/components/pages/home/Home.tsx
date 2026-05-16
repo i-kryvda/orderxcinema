@@ -10,7 +10,7 @@ import { ErrorMessage } from "@shared/ui/error-message/ErrorMessage";
 
 export function Home() {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get("q") ?? "batman";
+  const query = searchParams.get("q") ?? "spider";
   const { data, isLoading, error, refetch } = useMovies(query);
 
   let content;
