@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import styles from "./MovieSkeleton.module.scss";
+import styles from "./MovieDetailsSkeleton.module.scss";
 
-export function MovieSkeleton() {
+export function MovieDetailsSkeleton() {
   return (
     <>
       <div className={`${styles.posterSkeleton} ${styles.skeleton}`} />

@@ -1,29 +1,32 @@
-import { useSearchParams } from "react-router-dom";
-import {
-  MoviesListSkeleton,
-  MoviesList,
-} from "@components/organisms/movies-list";
 import { Section } from "@shared/ui/section/Section";
-import { useMovies } from "@shared/hooks/useMovies";
-import { EmptyState } from "@shared/ui/empty-state/EmptyState";
-import { ErrorMessage } from "@shared/ui/error-message/ErrorMessage";
+// import { useMovies } from "@components/pages/home/model/useMovies";
+
+import { MoviesContent } from "./ui/movies-content/MoviesContent";
+import { Pagination } from "./ui/pagination/Pagination";
+import { usePagination } from "./model/usePagination";
+import { useMoviesQueryParams } from "./model/useMoviesQueryParams";
+import { useMovies } from "./model/useMovies";
 
 export function Home() {
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get("q") ?? "spider";
-  const { data, isLoading, error, refetch } = useMovies(query);
+  const { query, page, setPage } = useMoviesQueryParams();
+  const { data, isLoading, error, refetch, total } = useMovies(query, page);
 
-  let content;
+  const pagitation = usePagination({
+    page,
+    setPage,
+    total,
+  });
 
-  if (isLoading) {
-    content = <MoviesListSkeleton />;
-  } else if (error) {
-    content = <ErrorMessage onRetry={refetch} />;
-  } else if (data.length === 0) {
-    content = <EmptyState text="No movies matched your search" />;
-  } else {
-    content = <MoviesList movies={data} />;
-  }
+  return (
+    <Section title="Movies">
+      <Pagination {...pagitation} />
 
-  return <Section title="Movies">{content}</Section>;
+      <MoviesContent
+        isLoading={isLoading}
+        error={error}
+        data={data}
+        onRetry={refetch}
+      />
+    </Section>
+  );
 }

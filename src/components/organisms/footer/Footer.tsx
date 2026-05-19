@@ -6,8 +6,7 @@ export function Footer() {
       <div className={`footer__container ${styles.footerContainer}`}>
         <div className={styles.footerBody}>
           <p className={styles.footerDescription}>
-            💭 Thanks for visiting WatchList ! <br />
-            I hope you’ll find your next favorite movie here. <br />
+            🎬 Thanks for visiting OrderXCinema !
           </p>
         </div>
 

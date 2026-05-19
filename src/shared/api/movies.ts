@@ -7,14 +7,17 @@ const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-export const getMovies = async (query = "batman") => {
-  const res = await api.get(`/?apikey=${API_KEY}&s=${query}`);
+export const getMovies = async (query = "batman", page = 1) => {
+  const res = await api.get(`/?apikey=${API_KEY}&s=${query}&page=${page}`);
 
   await delay(1000);
 
   console.log(res.data);
 
-  return res.data.Search || [];
+  return {
+    movies: res.data.Search || [],
+    totalResults: res.data.totalResults || "0",
+  };
   // return (res.data.Search || []).filter(
   //   (movie: Movie) => movie.Poster !== "N/A",
   // );
