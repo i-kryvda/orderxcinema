@@ -1,5 +1,5 @@
 .skeleton {
-  background: #2a2a2a;
+  background: var(--skeleton-color);
   border-radius: 6px;
   animation: pulse 1.2s infinite ease-in-out;
 }

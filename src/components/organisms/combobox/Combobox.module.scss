@@ -1,13 +1,16 @@
 .search {
   position: relative;
-  min-width: 40rem;
-  color: var(--text-primary);
-  color: var(--text-on-dark);
+  width: 100%;
+  max-width: 40rem;
 
   &Field {
     position: relative;
     display: flex;
     align-items: center;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
   }
 }
 
@@ -20,11 +23,9 @@
   width: 100%;
   padding: 0.7rem 3.6rem;
   border: 1px solid var(--border-accent);
-  // border-radius: 0.5rem;
-  // border-bottom-left-radius: 0;
-  // border-bottom-right-radius: 0;
-  color: var(--text-on-dark);
+  border-radius: 1rem;
   transition: all 0.2s ease;
+  color: var(--text-primary);
 
   &:hover {
     border-color: var(--border-color-hover);
@@ -80,14 +81,12 @@
   max-height: 200px;
   overflow-y: auto;
   padding: 1rem 0.5rem;
-  background-color: #262626;
+  color: var(--text-on-dark);
   background-color: rgba(0, 0, 0, 0.9);
-  // background-color: var(--sidebar-color); // ACCENT-BG-COLOR
   border: 1px solid var(--border-accent);
   border-top: 1px solid transparent;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   opacity: 0;
   transform: translateY(0.8rem);
   pointer-events: none;
@@ -104,18 +103,8 @@
   transition-duration: 0.08s;
 }
 
-.icon {
-  width: 15px;
-  height: 15px;
-  & svg {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .suggestion {
   position: relative;
-  // color: red;
   padding: 1rem 1.2rem;
   cursor: pointer;
   border-left: 2px solid transparent;
@@ -125,16 +114,13 @@
 }
 
 .suggestion:hover {
-  // border: 1px solid var(--border-color);
   background-color: var(--border-accent);
-  // background-color: red;
-  border-left: 2px solid orange;
+  border-left: 2px solid var(--border-primary);
 }
 
 .suggestion[data-highlighted="true"] {
   background-color: var(--border-accent);
-  border-left: 2px solid orange;
-  // color: white;
+  border-left: 2px solid var(--border-primary);
 }
 
 .suggestion[data-highlighted="true"] .tooltip {
@@ -147,7 +133,7 @@
   top: 50%;
   transform: translateY(-50%);
   background-color: black;
-  color: orange;
+  color: var(--text-accent);
   padding: 0.5rem;
   border-radius: 0.5rem;
   font-size: 11px;

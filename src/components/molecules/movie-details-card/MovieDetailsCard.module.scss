@@ -6,14 +6,13 @@
 .poster {
   width: 250px;
   height: 360px;
-  background-color: black;
+  background-color: #000;
   border-radius: 10px;
   overflow: hidden;
 
   > img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
   }
 }
@@ -30,7 +29,7 @@
 }
 
 .year {
-  color: gray;
+  opacity: 0.5;
 }
 
 .plot {
@@ -39,6 +38,33 @@
 }
 
 .button {
-  color: #ff760b;
+  color: var(--button-primary-bg);
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .poster {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 250 / 360;
+  }
+
+  .info {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .plot {
+    max-width: 100%;
+  }
 }

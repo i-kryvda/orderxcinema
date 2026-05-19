@@ -6,6 +6,7 @@ import { Pagination } from "./ui/pagination/Pagination";
 import { usePagination } from "./model/usePagination";
 import { useMoviesQueryParams } from "./model/useMoviesQueryParams";
 import { useMovies } from "./model/useMovies";
+import { Combobox } from "@components/organisms/combobox/Combobox";
 
 export function Home() {
   const { query, page, setPage } = useMoviesQueryParams();
@@ -19,6 +20,7 @@ export function Home() {
 
   return (
     <Section title="Movies">
+      <Combobox />
       <Pagination {...pagitation} />
 
       <MoviesContent

@@ -6,20 +6,17 @@
   &Description {
     line-height: 1.4;
     font-size: 1.4rem;
-    // font-style: italic;
   }
 
   &Link {
     position: relative;
     display: inline-block;
     padding: 1rem 1.6rem;
-    // border: 2px solid var(--text-accent);
-    border: 2px solid #ff760b;
-
+    border: 2px solid var(--border-primary);
     border-radius: 0.8rem;
 
     &:hover {
-      color: #ff760b;
+      color: var(--text-accent);
     }
   }
 

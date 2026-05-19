@@ -6,9 +6,7 @@ import { useClickOutside } from "@shared/hooks/useClickOutside";
 import { useMovieSuggestions } from "./model/useMovieSuggestions";
 import { useKeyboardNavigation } from "./model/useKeyboardNavogation";
 
-import s from "./Combobox.module.scss";
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+import styles from "./Combobox.module.scss";
 
 export function Combobox() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -109,16 +107,17 @@ export function Combobox() {
   useClickOutside(containerRef, closeSuggestions);
 
   return (
-    <form className={s.search} onSubmit={handleSubmit} ref={containerRef}>
-      <label
-        // htmlFor={ids.input}
-        className="visually-hidden"
-      >
+    <form className={styles.search} onSubmit={handleSubmit} ref={containerRef}>
+      <label htmlFor={ids.input} className="visually-hidden">
         Search movie
       </label>
 
-      <div className={s.searchField}>
-        <FiSearch className={s.searchIcon} onClick={focusInput} size={18} />
+      <div className={styles.searchField}>
+        <FiSearch
+          className={styles.searchIcon}
+          onClick={focusInput}
+          size={18}
+        />
 
         <input
           role="combobox"
@@ -130,7 +129,7 @@ export function Combobox() {
           autoComplete="off"
           ref={inputRef}
           disabled={false}
-          className={s.input}
+          className={styles.input}
           placeholder="Search todo..."
           value={input}
           onChange={handleChange}
@@ -139,19 +138,19 @@ export function Combobox() {
         />
 
         {hasQuery && (
-          <button type="button" className={s.clear} onClick={clearSearch}>
+          <button type="button" className={styles.clear} onClick={clearSearch}>
             <FiX size={18} />
           </button>
         )}
       </div>
 
       <ul
-        className={`${s.suggestions} ${suggestionsOpen ? s.open : ""}`}
+        className={`${styles.suggestions} ${suggestionsOpen ? styles.open : ""}`}
         id={ids.list}
         ref={suggestionsRef}
       >
         {showNotFound && (
-          <li className={s.suggestion} onClick={clearSearch}>
+          <li className={styles.suggestion} onClick={clearSearch}>
             Not found
           </li>
         )}
@@ -161,12 +160,12 @@ export function Combobox() {
             role="option"
             aria-selected={highlightedIndex === index}
             id={ids.option(index)}
-            className={s.suggestion}
+            className={styles.suggestion}
             onMouseDown={() => handleSelect(item)}
             data-highlighted={highlightedIndex === index}
           >
             <span>{item}</span>
-            <span className={s.tooltip}>Enter</span>
+            <span className={styles.tooltip}>Enter</span>
           </li>
         ))}
       </ul>

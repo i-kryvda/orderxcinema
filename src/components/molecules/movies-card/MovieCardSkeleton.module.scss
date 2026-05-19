@@ -1,18 +1,11 @@
 .movie {
-  // border: 2rem solid #1a1a1a;
-  // border-bottom: none;
-
-  // background-color: #1a1a1a;
-  // background-color: black;
   border-radius: 1rem;
 }
 
 .card {
   height: 100%;
   overflow: hidden;
-  // background-color: #1a1a1a;
-  // background-color: black;
-  // color: var(--text-on-dark);
+
   transition: transform 0.3s ease;
 }
 
@@ -20,7 +13,7 @@
 .title {
   position: relative;
   overflow: hidden;
-  background: #2a2a2a;
+  background: var(--skeleton-color);
 
   &::before,
   &::before {

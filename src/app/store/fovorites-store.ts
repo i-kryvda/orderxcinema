@@ -1,6 +1,6 @@
-import type { Movie } from "@shared/types/movies";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import type { Movie } from "@shared/types/movies";
 
 type FavoritesStore = {
   favorites: Movie[];

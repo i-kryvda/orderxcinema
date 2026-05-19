@@ -11,7 +11,7 @@ export function Footer() {
         </div>
 
         <div className={styles.footerActions}>
-          <a href="https://github.com" className={styles.footerLink}>
+          <a href="https://github.com/i-kryvda" className={styles.footerLink}>
             GitHub
           </a>
         </div>

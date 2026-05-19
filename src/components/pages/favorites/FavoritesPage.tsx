@@ -3,8 +3,6 @@ import { MoviesList } from "@components/organisms/movies-list/MoviesList";
 import { Section } from "@shared/ui/section/Section";
 import { EmptyState } from "@shared/ui/empty-state/EmptyState";
 
-import "./FavoritesPage.scss";
-
 export function FavoritesPage() {
   const favorites = useFavoritesStore((state) => state.favorites);
 

@@ -1,8 +1,6 @@
 .card {
   height: 100%;
   overflow: hidden;
-  // background-color: black;
-  // color: var(--text-on-dark);
   transition: transform 0.3s ease;
 }
 
@@ -31,8 +29,7 @@
   display: block;
   overflow: hidden;
   cursor: pointer;
-  background-color: #000000;
-  // border: 1px solid red;
+  background-color: #000;
   aspect-ratio: 2 / 3;
   border-radius: 1rem;
 
@@ -46,18 +43,13 @@
 }
 
 .content {
-  // border: 1px solid red;
   padding: 1rem;
   transition: transform 0.4s ease;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-start;
   gap: 1rem;
 }
 
 .details {
   text-transform: uppercase;
-
   color: var(--text-on-dark);
   border: 1px solid currentColor;
   padding: 1rem 1.5rem;

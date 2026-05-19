@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
   }
 }
 
@@ -15,6 +16,10 @@
   display: flex;
   align-items: center;
   gap: 3rem;
+
+  @media (max-width: 576px) {
+    gap: 1rem;
+  }
 }
 
 .link {
@@ -24,6 +29,10 @@
   align-items: flex-start;
   justify-content: center;
   text-transform: uppercase;
+
+  @media (max-width: 576px) {
+    font-size: 0;
+  }
 }
 
 .logo {
@@ -38,7 +47,6 @@
 .brand {
   display: flex;
   gap: 2rem;
-  // justify-content: flex-s//tart;
   align-items: center;
 }
 
@@ -46,9 +54,4 @@
   font-size: 3.5rem;
   color: var(--text-accent);
   transform: translateY(0);
-}
-
-.input {
-  border: 1px solid white;
-  color: white;
 }

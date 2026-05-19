@@ -19,10 +19,3 @@ export function MovieContent({ data, isLoading, isError }: Props) {
 
   return <MovieDetailsCard data={data} />;
 }
-
-// const renderContent = () => {
-//   if (status === "loading") return <MovieSkeleton />;
-//   if (status === "error") return <ErrorMessage />;
-//   if (!data) return <EmptyState text="Movie not found" />;
-//   return <MovieContent data={data} />;
-// };
